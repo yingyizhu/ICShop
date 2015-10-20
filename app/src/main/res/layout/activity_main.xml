@@ -1,54 +1,98 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/">
-
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton"
-        android:src="@drawable/homepage_allStore"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
-        android:layout_alignTop="@+id/imageButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/homepage_allBrand" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
-        android:src="@drawable/homepage_category"
-        android:layout_alignBottom="@+id/imageButton4"
-        android:layout_alignRight="@+id/imageButton2"
-        android:layout_alignEnd="@+id/imageButton2" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
-        android:layout_below="@+id/imageButton"
-        android:src="@drawable/homepage_favorite"
-        android:layout_toLeftOf="@+id/imageButton2"
-        android:layout_toStartOf="@+id/imageButton2" />
+    android:id="@+id/imageTest"
+    android:weightSum="10">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/IMG_background"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:src="@drawable/background"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#FF99FF"
+        android:adjustViewBounds="true"
+        />
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="2">
+
+
+
+        <!-- all brand,imageButton2 -->
+        <ImageButton
+           android:id="@+id/imageButton2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/homepage_allbrand"
+           android:layout_weight="1"
+
+           android:clickable="true"
+           android:layout_alignParentBottom="true"
+           android:layout_alignRight="@+id/imageButton"
+           android:layout_below="@+id/imageButton3" />
+
+        <!-- all store,imageButton -->
+       <ImageButton
+           android:id="@+id/imageButton"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/homepage_allstore"
+           android:layout_weight="1"
+
+           android:clickable="true"
+           android:layout_alignParentBottom="true"
+           android:layout_alignLeft="@+id/imageButton2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="2">
+
+        <!-- category,imageButton3 -->
+        <ImageButton
+           android:id="@+id/imageButton3"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:src="@drawable/homepage_category"
+           android:clickable="true"
+           android:layout_weight="1"
+           android:layout_alignParentBottom="true"
+           android:layout_alignLeft="@+id/imageButton4"
+            />
+
+        <!-- favorite,imageButton4 -->
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/homepage_favorite"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/imageButton3"
+
+            />
+
+
+
+    </LinearLayout>
+</RelativeLayout >
